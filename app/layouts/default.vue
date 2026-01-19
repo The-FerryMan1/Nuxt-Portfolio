@@ -1,31 +1,36 @@
 <script setup lang="ts">
 import type { NavigationMenuItem } from '@nuxt/ui';
-
+useHead({
+  title: 'Roxo - Full-Stack Web Developer',
+  meta: [
+    {
+      name: 'description',
+      content: 'Portfolio of Roxo, a full-stack web developer specializing in modern web applications.',
+    },
+  ],
+});
 const route = useRoute();
 
 const items = computed<NavigationMenuItem[]>(() => [
   {
     label: 'Home',
-    to: '/',
+    to: {path: '/', hash: '#hero'},
+    active: route.hash === '#hero',
   },
   {
     label: 'About',
-    to: '/about',
+    to: {path: '/', hash: '#about'},
+    active: route.hash === '#about',
   },
   {
     label: 'Projects',
-    to: '/projects',
-   
-  },
-  {
-    label: 'Blog',
-    to: '/blog',
-  
+    to: {path: '/', hash: '#projects'},
+    active: route.hash === '#projects',
   },
   {
     label: 'Contact',
-    to: '/contact',
-   
+    to: {path: '/', hash: '#contact'},
+    active: route.hash === '#contact',
   },
 ]);
 </script>
@@ -57,26 +62,10 @@ const items = computed<NavigationMenuItem[]>(() => [
 
     <template #right>
       <UButton
-        icon="i-simple-icons-discord"
-        color="neutral"
-        variant="ghost"
-        to="https://go.nuxt.com/discord"
-        target="_blank"
-        aria-label="Discord"
-      />
-      <UButton
-        icon="i-simple-icons-x"
-        color="neutral"
-        variant="ghost"
-        to="https://go.nuxt.com/x"
-        target="_blank"
-        aria-label="X"
-      />
-      <UButton
         icon="i-simple-icons-github"
         color="neutral"
         variant="ghost"
-        to="https://github.com/nuxt/nuxt"
+        to="https://github.com/The-FerryMan1"
         target="_blank"
         aria-label="GitHub"
       />
