@@ -23,7 +23,7 @@
       "A Python-based IP calculator tool that helps users perform subnetting and IP address calculations easily. It uses CustomTkinter for the GUI and ipaddress module for IP calculations.",
     img: "python_ip_calc.png",
     stack: ["devicon:python"],
-    source: "https://github.com/The-FerryMan1/short-link-api",
+    source: "https://github.com/The-FerryMan1/ip_calculator",
     link: "",
   },
 ]);
