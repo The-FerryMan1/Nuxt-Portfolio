@@ -6,7 +6,7 @@
 </script>
 <template>
   <HeroSection/>
-  <ProjectSectionVue/>
   <AboutSection/>
+  <ProjectSectionVue/>
   <ContactSection/>
 </template>

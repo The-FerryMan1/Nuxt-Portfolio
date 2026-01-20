@@ -30,11 +30,6 @@
 
 const proj_link = ref([
   {
-    label: "View Projects",
-    to: "/projects",
-    icon: "i-lucide-arrow-right",
-  },
-  {
     label: "View GitHub",
     to: "https://github.com/The-FerryMan1",
     icon: "i-lucide-github",
@@ -51,6 +46,7 @@ const proj_link = ref([
   >
     <UPageGrid>
       <UPageCard
+        
         :to="card.link"
         spotlight
         v-for="(card, index) in cards"
@@ -69,9 +65,9 @@ const proj_link = ref([
             class="size-6"
           />
         </div>
-        <img
+        <NuxtImg
           :src="`/img/${card.img}`"
-          alt="Tailwind CSS"
+          :alt="card.title"
           class="w-full rounded-md"
         />
         <div class="z-50">

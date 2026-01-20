@@ -35,17 +35,20 @@ const items = computed<NavigationMenuItem[]>(() => [
 ]);
 </script>
 <template>
+  <ClientOnly>
     <UHeader>
         <template #title>
             <h1>Roxo</h1>
         </template>
+
         <UNavigationMenu :items="items"  />
+        
         <template #right>
             <UColorModeButton/>
         </template>
 
         <template #body>
-             <UNavigationMenu orientation="vertical" :items="items"  class="-max-2.5" />
+        <UNavigationMenu orientation="vertical" :items="items"  class="-max-2.5" />
         </template>
     </UHeader>
 
@@ -71,4 +74,5 @@ const items = computed<NavigationMenuItem[]>(() => [
       />
     </template>
   </UFooter>
+  </ClientOnly>
 </template>
