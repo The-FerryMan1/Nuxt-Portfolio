@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-  const cards = ref([
+const cards = ref([
   {
     title: "LinkShortener",
     description:
@@ -26,6 +26,21 @@
     source: "https://github.com/The-FerryMan1/ip_calculator",
     link: "",
   },
+  {
+    title: "Network Pulse",
+    description:
+      "Network Pulse, is a real-time service monitoring dashboard. It’s designed to track the health and latency of web services using a modern Full-Stack TypeScript approach.",
+    img: "Pulse.png",
+    stack: [
+      "devicon:vuejs",
+      "devicon:bun",
+      "devicon:sqlite",
+      "skill-icons:elysia-dark",
+      "devicon:tailwindcss",
+    ],
+    source: "https://github.com/The-FerryMan1/pulse-web",
+    link: "",
+  },
 ]);
 
 const proj_link = ref([
@@ -38,50 +53,28 @@ const proj_link = ref([
 </script>
 
 <template>
-     <UPageSection
-     id="projects"
-    title="PROJECTS"
-    :links="proj_link"
-    description="Here are my projects, including personal projects I made."
-  >
+  <UPageSection id="projects" title="PROJECTS" :links="proj_link"
+    description="Here are my projects, including personal projects I made.">
     <UPageGrid>
-      <UPageCard
-        
-        :to="card.link"
-        spotlight
-        v-for="(card, index) in cards"
-        :key="index"
-        v-bind="card"
-      >
+      <UPageCard :to="card.link" spotlight v-for="(card, index) in cards" :key="index" v-bind="card">
         <template #header>
-          <UBadge v-if="card.isVibeCoded" variant="solid">VIBE CODED</UBadge>
+          <div class="flex gap-4">
+            <UBadge v-if="card.isVibeCoded" variant="solid" color="secondary">VIBE CODED</UBadge>
+            <UBadge v-if="!card.link" variant="subtle" color="info">No live preview</UBadge>
+          </div>
+
         </template>
 
         <div class="inline-block space-x-5 mt-4">
-          <UIcon
-            v-for="(stack, index) in card.stack"
-            :key="index"
-            :name="stack"
-            class="size-6"
-          />
+          <UIcon v-for="(stack, index) in card.stack" :key="index" :name="stack" class="size-6" />
         </div>
-        <NuxtImg
-          :src="`/img/${card.img}`"
-          :alt="card.title"
-          class="w-full rounded-md"
-        />
-        <div class="z-50">
-          <UButton
-            :to="card.source"
-            icon="i-lucide-github"
-            color="primary"
-            class="mt-4"
-            >View Source
+        <NuxtImg :src="`/img/${card.img}`" :alt="card.title" class="w-full rounded-md" />
+        <div class="z-50 mt-auto">
+          <UButton :to="card.source" icon="i-lucide-github" color="primary" class="mt-4">View Source
           </UButton>
         </div>
+
       </UPageCard>
     </UPageGrid>
   </UPageSection>
 </template>
-
-
