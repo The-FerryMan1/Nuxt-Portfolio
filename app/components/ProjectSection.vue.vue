@@ -41,6 +41,20 @@ const cards = ref([
     source: "https://github.com/The-FerryMan1/pulse-web",
     link: "",
   },
+  {
+    title: "Chaterminal",
+    description:
+      "Charterminal is a real-time chat application, it uses Elysia for Backend and WebSocket, the application does not have Database, so all the messages only stored in the memory. The UI used in the application is NuxtUI with a custom style with TailwindCSS to achieved Terminal Looking chatbox.",
+    img: "chaterminal.png",
+    stack: [
+      "devicon:vuejs",
+      "devicon:bun",
+      "skill-icons:elysia-dark",
+      "devicon:tailwindcss",
+    ],
+    source: "https://github.com/The-FerryMan1/pulse-web",
+    link: "",
+  },
 ]);
 
 const proj_link = ref([
